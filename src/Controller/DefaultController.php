@@ -21,7 +21,7 @@ class DefaultController extends AbstractController
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-
+//
             $operation = $form->getData();
             
             $calculator = new Calculator();
