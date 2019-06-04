@@ -10,6 +10,9 @@ doctrine:
         result_cache_driver:
             type: service
             id: doctrine.result_cache_provider
+    dbal:
+        types:
+            OperatorType: App\Entity\OperatorType
 
 services:
     doctrine.result_cache_provider:
