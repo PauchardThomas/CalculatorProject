@@ -23,11 +23,11 @@
  </target>
 
  <target name="clean" description="Cleanup build artifacts">
-  <delete dir="${basedir}/build/api"/>
-  <delete dir="${basedir}/build/code-browser"/>
-  <delete dir="${basedir}/build/coverage"/>
-  <delete dir="${basedir}/build/logs"/>
-  <delete dir="${basedir}/build/pdepend"/>
+  <delete dir="/build/api"/>
+  <delete dir="/build/code-browser"/>
+  <delete dir="/build/coverage"/>
+  <delete dir="/build/logs"/>
+  <delete dir="/build/pdepend"/>
  </target>
 
  <target name="prepare" depends="clean,vendors" description="Prepare for build">
