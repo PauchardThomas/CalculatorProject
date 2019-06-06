@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="oAuth2" default="build">
- <property name="composer.path" value="${basedir}/composer.phar" />
- <available property="composer.exists" file="${composer.path}" />
+ <!--<property name="composer.path" value="${basedir}/composer.phar" />
+ <available property="composer.exists" file="${composer.path}" />-->
  <target name="build"
    depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit,phpcb"/>
 
@@ -23,11 +23,11 @@
  </target>
 
  <target name="clean" description="Cleanup build artifacts">
-  <delete dir="/build/api"/>
-  <delete dir="/build/code-browser"/>
-  <delete dir="/build/coverage"/>
-  <delete dir="/build/logs"/>
-  <delete dir="/build/pdepend"/>
+  <delete dir="${basedir}/build/api"/>
+  <delete dir="${basedir}/build/code-browser"/>
+  <delete dir="${basedir}/build/coverage"/>
+  <delete dir="${basedir}/build/logs"/>
+  <delete dir="${basedir}/build/pdepend"/>
  </target>
 
  <target name="prepare" depends="clean,vendors" description="Prepare for build">
@@ -130,14 +130,14 @@
   </exec>
  </target>
 
- <target name="vendors" depends="composer">
-   <exec executable="${basedir}/composer.phar" failonerror="true">
+ <target name="vendors" >
+   <exec executable="composer" failonerror="true">
    <arg value="install" />
   </exec>
  </target>
 
- <target name="composer" unless="composer.exists">
+<!-- <target name="composer" unless="composer.exists">
   <get src="http://getcomposer.org/composer.phar" dest="${composer.path}" />
   <chmod file="${composer.path}" perm="775" />
- </target>
+ </target>-->
 </project>
