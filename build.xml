@@ -131,7 +131,7 @@
  </target>
 
  <target name="vendors" >
-   <exec executable="composer" failonerror="true">
+   <exec executable="composer">
    <arg value="install" />
   </exec>
  </target>
