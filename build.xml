@@ -116,6 +116,7 @@
 
  <target name="phpunit" description="Run unit tests with PHPUnit">
   <exec executable="./vendor/bin/simple-phpunit" >
+	<arg value="--coverage-clover clover.xml" />
 	<arg path="tests/"/>
   </exec>
  </target>
